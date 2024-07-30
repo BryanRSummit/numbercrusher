@@ -157,22 +157,22 @@ autoMin.grid(row=0, column=1, padx=10, pady=2, sticky="w")
 
 # Layout in frame using grid
 inLabelAreaCode.grid(row=0, column=0, padx=10, pady=2, sticky="w")
-inEntryAreaCode.grid(row=0, column=1, padx=10, pady=5, sticky="w")
+inEntryAreaCode.grid(row=0, column=1, padx=10, pady=3, sticky="w")
 #autoMin.grid(row=0, column=2, columnspan=1, padx=(0, 30), pady=(0, 30), sticky="w")
-outLabelAreaCode.grid(row=1, column=0, columnspan=1, padx=5, pady=5, sticky="e")
+outLabelAreaCode.grid(row=1, column=0, columnspan=1, padx=5, pady=3, sticky="e")
 
 
 inLabelDeDup.grid(row=2, column=0, padx=10, pady=2, sticky="w")
-inEntryDeDup.grid(row=3, column=0, columnspan=3, padx=10, pady=5, sticky="ew")
-possibleStatesLbl.grid(row=4, column=0, columnspan=3, padx=10, pady=5, sticky="ew")
+inEntryDeDup.grid(row=3, column=0, columnspan=3, padx=10, pady=3, sticky="ew")
+possibleStatesLbl.grid(row=4, column=0, columnspan=3, padx=10, pady=3, sticky="ew")
 
 inLabelDelete.grid(row=5, column=0, padx=10, pady=2, sticky="w")
-inEntryDelete.grid(row=6, column=0, padx=10, columnspan=3, pady=5, sticky="ew")
+inEntryDelete.grid(row=6, column=0, padx=10, columnspan=3, pady=3, sticky="ew")
 
 #Frame to hold the area code and auto minimize check box
-areaCodeAndMinFrame.grid(row=1, column=0, columnspan=3, pady=5, sticky="ew")
-evalBtnFrame.grid(row=7, column=0, columnspan=3, pady=10)
-google_frame.grid(row=0, column=0, columnspan=3, pady=5, sticky="ew")
+areaCodeAndMinFrame.grid(row=1, column=0, columnspan=3, pady=3, sticky="ew")
+evalBtnFrame.grid(row=7, column=0, columnspan=3, pady=3)
+google_frame.grid(row=0, column=0, columnspan=3, pady=3, sticky="ew")
 
 
 # Configure column and row weights for resizing
