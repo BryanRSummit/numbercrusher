@@ -143,7 +143,7 @@ inEntryDelete.bind("<Return>", on_return)
 
 # Create a frame to contain the button
 evalBtnFrame = tk.Frame(root)
-evalBtn = tk.Button(evalBtnFrame, text="Evaluate", height=1, width=30, command=lambda: inEntryDelete.event_generate('<Return>'))
+evalBtn = tk.Button(evalBtnFrame, text="Crush!", height=1, width=30, command=lambda: inEntryDelete.event_generate('<Return>'))
 evalBtn.grid(row=0, column=0, padx=10, pady=2, sticky="w")
 
 # make a check box to turn auto minimizing on and off
