@@ -13,11 +13,14 @@ def googleSearch(inGoogleText):
     if input != "":
         query = input
         for j in search(query, num=2, stop=5, pause=0.2):
-            phone_nums.append(extract_phone_numbers(j))
+            maybe_nums = extract_phone_numbers(j)
+            if maybe_nums is not None:
+                phone_nums.append(maybe_nums)
             googleResults.append(j)
 
         # clear out the input
         inGoogleText.delete("1.0", "end")
+
     return googleResults, phone_nums
 
 

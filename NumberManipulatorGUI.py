@@ -59,6 +59,8 @@ def on_return(event):
 def setup_global_hotkey():
     keyboard.add_hotkey('ctrl+f', feed_next_number)
     keyboard.add_hotkey('ctrl+shift+f', full_list_to_clipboard)
+    # Bigger problem than I thought
+    # keyboard.add_hotkey('ctrl+shift+s', extract_phone_numbers(get_active_chrome_tab_url()))
 
 
 # Help window
