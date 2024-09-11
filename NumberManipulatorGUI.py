@@ -40,7 +40,6 @@ def main():
 
     def on_return(event):
         global googleResults, potential_phone_nums
-
         # widget that triggered the event
         widget = event.widget
 
@@ -71,6 +70,8 @@ def main():
     def show_hotkeys():
         hotkey_window = tk.Toplevel(root)
         create_hotkeys_notebook(hotkey_window)
+
+
 
     # background thread to listen for hot keys
     hotkey_thread = threading.Thread(target=setup_global_hotkey, daemon=True)
@@ -200,8 +201,9 @@ def main():
     root.mainloop()
 
 if __name__ == "__main__":
-    if sys.argv[-1] == "run_as_script":
-        main()
-    else:
-        import subprocess
-        subprocess.Popen([sys.executable, __file__, "run_as_script"], creationflags=subprocess.CREATE_NO_WINDOW)
+    main()
+    # if sys.argv[-1] == "run_as_script":
+    #     main()
+    # else:
+    #     import subprocess
+    #     subprocess.Popen([sys.executable, __file__, "run_as_script"], creationflags=subprocess.CREATE_NO_WINDOW)
