@@ -21,7 +21,7 @@ def remove_chars(input_string):
     for thing in removeThese:
         input_string = input_string.replace(thing, "")
 
-        # If the first element is '1' and the length is 11, remove the '1'
+    # If the first element is '1' and the length is 11, remove the '1'
     if input_string.startswith("1") and len(input_string) == 11:
         input_string = input_string[1:]
         
