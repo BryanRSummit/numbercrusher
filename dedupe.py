@@ -1,12 +1,20 @@
 import pyperclip
 from areaCodes import statesByCodes
 from chars import remove_chars, rm_duplicates_in_order
+import json
+import os
 
 #globals for number feeding
 feedNums = []
 current_index = 0
 cycled = True
 
+# Load the JSON data from a file
+with open('agent_phones.json', 'r') as file:
+    agents_phones = json.load(file)
+
+    # Create a mapping of phone numbers to agent names
+phone_to_agent = {agent["Phone"]: agent["Agent"] for agent in agents_phones if agent["Phone"]}
 
 def deDupe(inEntryDeDup, possibleStatesLbl, onOff, root):
     if inEntryDeDup.get("1.0", "end-1c") != "":
@@ -27,7 +35,8 @@ def deDupe(inEntryDeDup, possibleStatesLbl, onOff, root):
 
         #globals to deal with feeding numbers to clipboard
         cycled = False
-        feedNums = uniqNums
+        # Filter out agent numbers to create feedNums
+        feedNums = [num for num in uniqNums if num not in phone_to_agent]
         current_index = 0
 
         # check states here for area code possibilities
@@ -58,7 +67,10 @@ def extractAreaCode(number):
     return number[:3]
 
 def format_hyphen(nums):
-    return "\n".join(f"{num} - " for num in nums)
+    # Use the mapping to add agent names where available
+    return "\n".join(
+        f"{num} - {phone_to_agent.get(num, '')}" for num in nums
+    )
 
 def format_newline(nums):
     return "\n".join(f"{num}" for num in nums)
